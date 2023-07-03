@@ -1,6 +1,6 @@
 // urls 
 
-let deployedUrl ="https://jsonserver-nw5i.onrender.com//users"
+let deployedUrl ="https://jsonserver-nw5i.onrender.com/users"
 let localUrl = "http://localhost:3000/users"
 
 
