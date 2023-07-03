@@ -93,7 +93,7 @@
 
     async function getUserData() {
         try {
-            const response = await fetch(deployedUrl, {
+            const response = await fetch(deployedLink, {
                 method: "GET", // or 'PUT'
                 headers: {
                     "Content-Type": "application/json",
@@ -212,7 +212,7 @@
     }
     async function deleteUserData(id) {
         try {
-            const response = await fetch(`${deployedUrl}/${id}`, {
+            const response = await fetch(`${deployedLink}/${id}`, {
                 method: "DELETE", // or 'PUT'
                 headers: {
                     "Content-Type": "application/json",
