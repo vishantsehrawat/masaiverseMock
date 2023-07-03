@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>login here</p>
+    <form id="form">
+        <label for="email">email</label><br>
+        <input type="text" id="email" value=""><br><br>
+        <label for="passoword">password</label><br>
+        <input type="password" id="password" value=""><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+<script>
+    // https://reqres.in/api/users/
+
+    let reqresUrl = "https://reqres.in/api/users/"
+    let form = document.getElementById("form")
+
+
+    //sending the post request to store the user data
+
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let email = document.getElementById("email").value
+        let password = document.getElementById("password").value
+        let data = {
+            email, password
+        }
+        console.log("🚀 ~ file: user.js:23 ~ form.addEventListener ~ data:", data)
+
+        submitUserData(data);
+
+
+    })
+    async function submitUserData(data) {
+        try {
+            const response = await fetch(reqresUrl, {
+                method: "POST", // or 'PUT'
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+            console.log("Success:", result);
+            alert("successfully logged in, redirecting in 2 seconds")
+
+            setTimeout(() => {
+
+                window.location.href = "data.html"
+            }, 2000);
+        } catch (error) {
+            console.error("Error:", error);
+            alert("error logging in")
+        }
+    }
+
+</script>
+
+</html>
