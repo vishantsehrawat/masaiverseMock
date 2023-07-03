@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-    
+
 </style>
+
 <body>
-    
+
+    <table>
+        <tr>
+            <th>guests attending:</th>
+            <td id="totalGuest"></td>
+        </tr>
+        <tr>
+            <th>students attending:</th>
+            <td id="totalStudent"></td>
+        </tr>
+        <tr>
+            <th>professionals attending:</th>
+            <td id="totalProfessional"></td>
+        </tr>
+        <tr>
+            <th>people attending:</th>
+            <td id="average"></td>
+        </tr>
+    </table>
 </body>
 <script>
 
+    const userToken = localStorage.getItem('userToken');
+    if (!userToken) {
+        window.location.href = 'login.html';
+        return;
+    }
+   
+    
+
 </script>
+
 </html>
